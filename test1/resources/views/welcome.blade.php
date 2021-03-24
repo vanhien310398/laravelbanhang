@@ -94,20 +94,20 @@
                                     <nav>                                                
                                         <ul id="navigation">                                                                                                                                     
                                             <li><a href="{{URL::to('/trangchu')}}">Trang chủ</a></li>
-                                            <li><a href="Catagori.html">Catagori</a></li>
+                                            <!-- <li><a href="Catagori.html">Catagori</a></li> -->
                                             <li class="hot"><a href="#">Latest</a>
                                                 <ul class="submenu">
                                                     <li><a href="product_list.html"> Product list</a></li>
                                                     <li><a href="single-product.html"> Product Details</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="blog.html">Blog</a>
+                                            <!-- <li><a href="blog.html">Blog</a>
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">Blog</a></li>
                                                     <li><a href="single-blog.html">Blog Details</a></li>
                                                 </ul>
-                                            </li>
-                                            <li><a href="#">Pages</a>
+                                            </li> -->
+                                            <!-- <li><a href="#">Pages</a>
                                                 <ul class="submenu">
                                                     <li><a href="login.html">Login</a></li>
                                                     <li><a href="cart.html">Card</a></li>
@@ -117,27 +117,27 @@
                                                     <li><a href="cart.html">Shopping Cart</a></li>
                                                     <li><a href="checkout.html">Product Checkout</a></li>
                                                 </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            </li> -->
+                                            <!-- <li><a href="contact.html">Contact</a></li> -->
                                         </ul>
                                     </nav>
                                 </div>
                             </div> 
                             <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
                                 <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
-                                    <li class="d-none d-xl-block">
+                                    <!-- <li class="d-none d-xl-block">
                                         <div class="form-box f-right ">
                                             <input type="text" name="Search" placeholder="Search products">
                                             <div class="search-icon">
                                                 <i class="fas fa-search special-tag"></i>
                                             </div>
                                         </div>
-                                     </li>
-                                    <li class=" d-none d-xl-block">
+                                     </li> -->
+                                    <!-- <li class=" d-none d-xl-block">
                                         <div class="favorit-items">
                                             <i class="far fa-heart"></i>
                                         </div>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <div class="shopping-card">
                                             <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
@@ -164,12 +164,12 @@
         <div class="slider-area ">
             <!-- Mobile Menu -->
             <div class="slider-active">
-                <div class="single-slider slider-height" data-background="{{('public/frontend/img/hero/h1_hero.jpg')}}">
+                <div class="single-slider slider-height" data-background="{{('public\frontend\img\Catory\banner.jpg')}}">
                     <div class="container">
                         <div class="row d-flex align-items-center justify-content-between">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-none d-md-block">
                                 <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                                    <img src="{{('public/frontend/img/hero/hero_man.png')}}" alt="">
+                                    <img height="400" width="600" src="{{('public\upload/product/casio-217.jpg')}}" alt="">
                                 </div>
                             </div>
                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8">
@@ -192,10 +192,12 @@
         <!-- slider Area End-->
         <!-- Category Area Start-->
         @yield('content')
+        @yield('detail')
+        
         <!-- Best Collection End -->
         <!-- Latest Offers Start -->
         <div class="latest-wrapper lf-padding">
-            <div class="latest-area latest-height d-flex align-items-center" data-background="{{('public/frontend/img/collection/latest-offer.png')}}">
+            <div class="latest-area latest-height d-flex align-items-center" data-background="{{('public/upload/product/banner.jpg')}}">
                 <div class="container">
                     <div class="row d-flex align-items-center">
                         <div class="col-xl-5 col-lg-5 col-md-6 offset-xl-1 offset-lg-1">
@@ -216,7 +218,7 @@
                 </div>
                 <!-- man Shape -->
                 <div class="man-shape">
-                    <img src="{{('public/frontend/img/collection/latest-man.png')}}" alt="">
+                    <img src="{{('public/upload/product/banner.jpg')}}" alt="">
                 </div>
             </div>
         </div>
@@ -368,38 +370,51 @@
 	<!-- JS here -->
 	
 		<!-- All JS Custom Plugins Link Here here -->
-
+        <script src="{{asset('public/frontend/js/vendor/modernizr-3.5.0.min.js')}}"></script>
 		<!-- Jquery, Popper, Bootstrap -->
-		<script src="{{('public/frontend/js/vendor/jquery-1.12.4.min.js')}}"></script>
-        <script src="{{('public/frontend/js/popper.min.js')}}"></script>
-        <script src="{{('public/frontend/js/bootstrap.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/vendor/jquery-1.12.4.min.js')}}"></script>
+        <script src="{{asset('public/frontend/js/popper.min.js')}}"></script>
+        <script src="{{asset('public/frontend/js/bootstrap.min.js')}}"></script>
 	    <!-- Jquery Mobile Menu -->
-       
+        <script src="{{asset('public/frontend/js/jquery.slicknav.min.js')}}"></script>
 
 		<!-- Jquery Slick , Owl-Carousel Plugins -->
-        <script src="{{('public/frontend/js/owl.carousel.min.js')}}"></script>
-        <script src="{{('public/frontend/js/slick.min.js')}}"></script>
+        <script src="{{asset('public/frontend/js/owl.carousel.min.js')}}"></script>
+        <script src="{{asset('public/frontend/js/slick.min.js')}}"></script>
 
 		<!-- One Page, Animated-HeadLin -->
-        <script src="{{('public/frontend/js/wow.min.js')}}"></script>
-		<script src="{{('public/frontend/js/animated.headline.js')}}"></script>
-        <script src="{{('public/frontend/js/jquery.magnific-popup.js')}}"></script>
+        <script src="{{asset('public/frontend/js/wow.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/animated.headline.js')}}"></script>
+        <script src="{{asset('public/frontend/js/jquery.magnific-popup.js')}}"></script>
 
 		<!-- Scrollup, nice-select, sticky -->
-        <script src="{{('public/frontend/js/jquery.scrollUp.min.js')}}"></script>
-        <script src="{{('public/frontend/js/jquery.nice-select.min.js')}}"></script>
-		<script src="{{('public/frontend/js/jquery.sticky.js')}}"></script>
+        <script src="{{asset('public/frontend/js/jquery.scrollUp.min.js')}}"></script>
+        <script src="{{asset('public/frontend/js/jquery.nice-select.min.js')}}"></script>
+		<script src="{{asset('public/frontend/js/jquery.sticky.js')}}"></script>
         
         <!-- contact js -->
-        <script src="{{('public/frontend/js/contact.js')}}"></script>
-        <script src="{{('public/frontend/js/jquery.form.js')}}"></script>
-        <script src="{{('public/frontend/js/jquery.validate.min.js')}}"></script>
-        <script src="{{('public/frontend/js/mail-script.js')}}"></script>
-    
+        <script src="{{asset('public/frontend/js/contact.js')}}"></script>
+        <script src="{{asset('public/frontend/js/jquery.form.js')}}"></script>
+        <script src="{{asset('public/frontend/js/jquery.validate.min.js')}}"></script>
+        <script src="{{asset('public/frontend/js/mail-script.js')}}"></script>
+        <script src="{{asset('public/frontend/js/jquery.ajaxchimp.min.js')}}"></script>
         
 		<!-- Jquery Plugins, main Jquery -->	
-        <script src="{{('public/frontend/js/plugins.js')}}"></script>
-        <script src="{{('public/frontend/js/main.js')}}"></script>
+        <script src="{{asset('public/frontend/js/plugins.js')}}"></script>
+        <script src="{{asset('public/frontend/js/main.js')}}"></script>
         
+  <!-- swiper js -->
+  <script src="{{asset('public/frontend/js/swiper.min.js')}}"></script>
+            <!-- swiper js -->
+        <script src="{{asset('public/frontend/js/mixitup.min.js')}}"></script>
+        <script src="{{asset('public/frontend/js/jquery.counterup.min.js')}}"></script>
+        <script src="{{asset('public/frontend/js/waypoints.min.js')}}"></script>
+        
+
+
+
+    
+
+
     </body>
 </html>

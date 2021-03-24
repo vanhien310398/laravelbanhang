@@ -61,6 +61,7 @@
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                         <div class="row">
                             @foreach($all_product as $key => $product)
+                            <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_id)}}">
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
@@ -84,9 +85,13 @@
                                                 
                                             </ul>
                                         </div>
+                                        <div class="latest-subscribe">
+                             
+                            </div>
                                     </div>
                                 </div>
                             </div>
+                            </a>
                             @endforeach
                         </div>     
                     </div>
@@ -112,6 +117,7 @@
                                                 <li>$40.00</li>
                                                 <li class="discount">$60.00</li>
                                             </ul>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -186,89 +192,5 @@
         </section>
         <!-- Latest Products End -->
         <!-- Best Product Start -->
-        <div class="best-product-area lf-padding" >
-           <div class="product-wrapper bg-height" style="background-image: url('assets/img/categori/card.png')">
-                <div class="container position-relative">
-                    <div class="row justify-content-between align-items-end">
-                        <div class="product-man position-absolute  d-none d-lg-block">
-                            <img src="{{('public/frontend/img/categori/card-man.png')}}" alt="">
-                        </div>
-                        <div class="col-xl-2 col-lg-2 col-md-2 d-none d-lg-block">
-                            <div class="vertical-text">
-                                <span>Manz</span>
-                            </div>
-                        </div>
-                        <div class="col-xl-8 col-lg-8">
-                            <div class="best-product-caption">
-                                <h2>Find The Best Product<br> from Our Shop</h2>
-                                <p>Designers who are interesten creating state ofthe.</p>
-                                <a href="#" class="black-btn">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-           </div>
-           <!-- Shape -->
-           <div class="shape bounce-animate d-none d-md-block">
-               <img src="{{('public/frontend/img/categori/card-shape.png')}}" alt="">
-           </div>
-        </div>
-        <!-- Best Product End-->
-        <!-- Best Collection Start -->
-        <div class="best-collection-area section-padding2">
-            <div class="container">
-                <div class="row d-flex justify-content-between align-items-end">
-                    <!-- Left content -->
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="best-left-cap">
-                            <h2>Best Collection of This Month</h2>
-                            <p>Designers who are interesten crea.</p>
-                            <a href="#" class="btn shop1-btn">Shop Now</a>
-                        </div>
-                        <div class="best-left-img mb-30 d-none d-sm-block">
-                            <img src="{{('public/frontend/img/collection/collection1.png')}}" alt="">
-                        </div>
-                    </div>
-                    <!-- Mid Img -->
-                     <div class="col-xl-2 col-lg-2 d-none d-lg-block">
-                        <div class="best-mid-img mb-30 ">
-                            <img src="{{('public/frontend/img/collection/collection2.png')}}" alt="">
-                        </div>
-                    </div>
-                    <!-- Riht Caption -->
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="best-right-cap ">
-                           <div class="best-single mb-30">
-                               <div class="single-cap">
-                                   <h4>Menz Winter<br> Jacket</h4>
-                               </div>
-                               <div class="single-img">
-                                  <img src="{{('public/frontend/img/collection/collection3.png')}}" alt="">
-                               </div>
-                           </div>
-                        </div>
-                        <div class="best-right-cap">
-                           <div class="best-single mb-30">
-                               <div class="single-cap active">
-                                   <h4>Menz Winter<br>Jacket</h4>
-                               </div>
-                               <div class="single-img">
-                                  <img src="{{('public/frontend/img/collection/collection4.png')}}" alt="">
-                               </div>
-                           </div>
-                        </div>
-                        <div class="best-right-cap">
-                           <div class="best-single mb-30">
-                               <div class="single-cap">
-                                   <h4>Menz Winter<br> Jacket</h4>
-                               </div>
-                               <div class="single-img">
-                                  <img src="{{('public/frontend/img/collection/collection5.png')}}" alt="">
-                               </div>
-                           </div>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-        </div>
+       
 @endsection
