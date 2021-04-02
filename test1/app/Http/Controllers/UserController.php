@@ -47,7 +47,7 @@ class UserController extends Controller
     
     }
     public function dangky(Request $request){
-     
+        
 
         $user = new User();
         $user->name = $request->name;

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\cartController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,4 +42,12 @@ Route::post('/save_card',[CartController::class,'save_cart']);
 
 Route::get('/cart',[CartController::class,'Show_cart']);
 Route::get('/delete_cart/{product_id}',[CartController::class,'delete_cart']);
+//login
+Route::get('/login',[UserController::class,'show_login']);
+Route::post('/user-dashboard',[UserController::class,'login']);
+Route::get('/logout',[UserController::class,'logout']);
+//dangky
+Route::get('/dangky',[UserController::class,'show_dangky']);
+Route::post('/dangky-dashboard',[UserController::class,'dangky']);
+
 

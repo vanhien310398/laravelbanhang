@@ -14,19 +14,30 @@ class cartController extends Controller
     public function save_cart(Request $request){
         $productid = $request->id_hidden;
         $quantity = $request->qty;
+        $quantity2 = $request->qty2;
         $product = DB::table('tbl_product')->where('Product_id',$productid)->get()->first();
         $data['product_id']=$product->product_id;
         $data['product_name']=$product->product_name;
         $data['product_gia']=$product->product_gia;
+        
         $data['product_img']=$product->product_image;
+        
         $product_cart = DB::table('cart')->where('Product_id',$productid)->get()->first();
+        if($quantity2 == null){
         if($product_cart !=null){
             $data['product_qty'] = $product_cart->product_qty + (int)($quantity);
+            $data['total']= $product->product_gia * ($product_cart->product_qty+(int)($quantity));
             DB::table('cart')->where('product_id',$productid)->update($data);
         }
         else{
             $data['product_qty']=(int)$quantity;
+            $data['total']= $product->product_gia*(int)$quantity;
             DB::table('cart')->insert($data);
+        }
+        }else{
+            $data['product_qty']=(int)$quantity2;
+            $data['total']= $product->product_gia*(int)$quantity2;
+            DB::table('cart')->where('product_id',$productid)->update($data);
         }
       
         return redirect('/cart');
@@ -41,8 +52,9 @@ class cartController extends Controller
     }
     public function Show_cart(){
         $product = DB::table('cart')->get();
+        $Sum = DB::table('cart')->sum('total');
 
-        return view('pages.sanpham.cart')->with('Cart_list',$product);
+        return view('pages.sanpham.cart')->with('Cart_list',$product)->with('total',$Sum);
       
     }
 

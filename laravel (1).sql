@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th3 23, 2021 lúc 09:43 AM
+-- Thời gian đã tạo: Th4 02, 2021 lúc 03:12 PM
 -- Phiên bản máy phục vụ: 5.7.31
 -- Phiên bản PHP: 7.4.9
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `laravel`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `cart`
+--
+
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE IF NOT EXISTS `cart` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(10) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `product_gia` int(11) NOT NULL,
+  `product_qty` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `product_img` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `cart`
+--
+
+INSERT INTO `cart` (`id`, `product_id`, `product_name`, `product_gia`, `product_qty`, `total`, `product_img`) VALUES
+(11, 12, 'Đồng hồ Nam Casio MTP-X300L-7EVDF', 2178000, 4, 8712000, 'Casio-217.jpg');
 
 -- --------------------------------------------------------
 
@@ -91,6 +116,21 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `shopping_cart`
+--
+
+DROP TABLE IF EXISTS `shopping_cart`;
+CREATE TABLE IF NOT EXISTS `shopping_cart` (
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `instance` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -303,7 +343,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
@@ -314,7 +354,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `creat
 (2, 'abc', 'abc@gmail.com', '$2y$10$bCMk2R3sM81KkmjWygRqP.SEI9dJCllRk4aAsGR9f4FgNKAJEwD0q', 'LuARqSxtdwrCu6ZNlG8giuq6I160QJjBuWhmMTZUyPdFB7R9KKCveWl1SuIO', '2019-12-18 18:14:17', '2019-12-18 18:14:17'),
 (3, 'ssaa', 'abcd@gmail.com', '$2y$10$TEgQ66hklof5sf9/EPKhnubrR.uS0rCXZ5ByLKjGgEbW8Y.TQ1Ktu', NULL, '2019-12-18 18:20:00', '2019-12-18 18:20:00'),
 (4, 'hoquocduy', 'hoquocduy198@gmail.com', '$2y$10$OpNCgnvGiOicxiSM8qRpguo0fI6e1JYKL20UypLsfmPLuv0xMqv72', NULL, '2020-06-01 03:23:53', '2020-06-01 03:23:53'),
-(5, 'ntnngan', 'DH51703779@student.stu.edu.vn', '$2y$10$iLhTYvvxvLTA0bPf9iaGvOiaNju9KQ.Azk3PRYs5M9CHJKO42cOAG', NULL, '2021-03-17 10:05:27', '2021-03-17 10:05:27');
+(5, 'ntnngan', 'DH51703779@student.stu.edu.vn', '$2y$10$iLhTYvvxvLTA0bPf9iaGvOiaNju9KQ.Azk3PRYs5M9CHJKO42cOAG', NULL, '2021-03-17 10:05:27', '2021-03-17 10:05:27'),
+(6, 'ntnngan', 'DH51703779@student.stu.edu.vn', 'e10adc3949ba59abbe56e057f20f883e', NULL, '2021-04-02 08:03:33', '2021-04-02 08:03:33');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

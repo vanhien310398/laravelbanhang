@@ -144,7 +144,14 @@
                                             <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
                                         </div>
                                     </li>
-                                   <li class="d-none d-lg-block"> <a href="#" class="btn header-btn">Sign in</a></li>
+                                    <?php 
+					$username=Session::get('user_name');
+					if($username){	?>
+                        <li class="d-none d-lg-block"> <a href="{{URL::to('/logout')}}" class="btn header-btn">log out</a></li>
+					<?php }	
+                    else {
+                       ?> <li class="d-none d-lg-block"> <a href="{{URL::to('/login')}}" class="btn header-btn">Sign in</a></li>
+				    <?php     }   ?>
                                 </ul>
                             </div>
                             <!-- Mobile Menu -->
@@ -170,6 +177,8 @@ use Melihovv\ShoppingCart\Facades\ShoppingCart as Cart;
         @yield('content')
         @yield('detail')
         @yield('cart')
+        @yield('login')
+        @yield('dangky')
         @yield('productlist')
         <!-- Best Collection End -->
         <!-- Latest Offers Start -->
