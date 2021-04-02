@@ -34,8 +34,8 @@ Route::post('/admin-dashboard',[AdminController::class,'dashboard']);
 
 //sanpham
 Route::get('/chi-tiet-san-pham/{product_id}',[productController::class,'detail_product']);
-
-
+Route::get('/productlist',[productController::class,'showproduct']);
+Route::post('/search',[productController::class,'showtimkiem']);
 //Cart
 Route::post('/save_card',[CartController::class,'save_cart']);
 

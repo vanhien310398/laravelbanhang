@@ -70,7 +70,7 @@
                                 <div class="header-info-right">
                                    <ul>                                          
                                        <li><a href="login.html">My Account </a></li>
-                                       <li><a href="product_list.html">Wish List  </a></li>
+                                       <li><a href="">Wish List  </a></li>
                                        <li><a href="cart.html">Shopping</a></li>
                                        <li><a href="cart.html">Cart</a></li>
                                        <li><a href="checkout.html">Checkout</a></li>
@@ -98,7 +98,7 @@
                                             <!-- <li><a href="Catagori.html">Catagori</a></li> -->
                                             <li class="hot"><a href="#">Latest</a>
                                                 <ul class="submenu">
-                                                    <li><a href="product_list.html"> Product list</a></li>
+                                                    <li><a href="{{URL::to('/productlist')}}"> Product list</a></li>
                                                     <li><a href="single-product.html"> Product Details</a></li>
                                                 </ul>
                                             </li>
@@ -170,7 +170,7 @@ use Melihovv\ShoppingCart\Facades\ShoppingCart as Cart;
         @yield('content')
         @yield('detail')
         @yield('cart')
-        
+        @yield('productlist')
         <!-- Best Collection End -->
         <!-- Latest Offers Start -->
         <div class="latest-wrapper lf-padding">
