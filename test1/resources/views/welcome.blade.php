@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html class="no-js" lang="zxx">
     <head>
         <meta charset="utf-8">
@@ -93,7 +94,7 @@
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav>                                                
                                         <ul id="navigation">                                                                                                                                     
-                                            <li><a href="{{URL::to('/trangchu')}}">Trang chủ</a></li>
+                                            <li><a href="{{URL::to('/')}}">Trang chủ</a></li>
                                             <!-- <li><a href="Catagori.html">Catagori</a></li> -->
                                             <li class="hot"><a href="#">Latest</a>
                                                 <ul class="submenu">
@@ -140,18 +141,10 @@
                                     </li> -->
                                     <li>
                                         <div class="shopping-card">
-                                            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                                            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
                                         </div>
                                     </li>
-                                    <?php 
-					$username=Session::get('user_name');
-					if($username){	?>
-                        <li class="d-none d-lg-block"> <a href="{{URL::to('/logout')}}" class="btn header-btn">log out</a></li>
-					<?php }	
-                    else {
-                       ?> <li class="d-none d-lg-block"> <a href="{{URL::to('/login')}}" class="btn header-btn">Sign in</a></li>
-				    <?php     }   ?>
-                                   
+                                   <li class="d-none d-lg-block"> <a href="#" class="btn header-btn">Sign in</a></li>
                                 </ul>
                             </div>
                             <!-- Mobile Menu -->
@@ -167,44 +160,16 @@
     </header>
 
     <main>
-
+<?php
+use Melihovv\ShoppingCart\Facades\ShoppingCart as Cart;
+?>
         <!-- slider Area Start -->
-        <div class="slider-area ">
-            <!-- Mobile Menu -->
-            <div class="slider-active">
-                <div class="single-slider slider-height" data-background="{{('public\frontend\img\Catory\banner.jpg')}}">
-                    <div class="container">
-                        <div class="row d-flex align-items-center justify-content-between">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-none d-md-block">
-                                <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
-                                    <img height="400" width="600" src="{{('public\upload/product/casio-217.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8">
-                                <div class="hero__caption">
-                                    <span data-animation="fadeInRight" data-delay=".4s">60% Discount</span>
-                                    <h1 data-animation="fadeInRight" data-delay=".6s">Winter <br> Collection</h1>
-                                    <p data-animation="fadeInRight" data-delay=".8s">Best Cloth Collection By 2020!</p>
-                                    <!-- Hero-btn -->
-                                    <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
-                                        <a href="industries.html" class="btn hero-btn">Shop Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-             
-            </div>
-        </div>
+   
         <!-- slider Area End-->
         <!-- Category Area Start-->
         @yield('content')
         @yield('detail')
         @yield('cart')
-        @yield('login')
-        @yield('dangky')
-        
         
         <!-- Best Collection End -->
         <!-- Latest Offers Start -->

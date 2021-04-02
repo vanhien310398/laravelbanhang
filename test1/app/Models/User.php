@@ -21,7 +21,6 @@ class User extends Authenticatable
         'email',
         'password',
     ];
-    protected $quarded = ['*'];
 
     /**
      * The attributes that should be hidden for arrays.
