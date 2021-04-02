@@ -1,45 +1,46 @@
 @extends('welcome')
 @Section('detail')
+@foreach($all_product as $key=>$product)
 <div class="product_image_area">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-12">
-          <div class="product_img_slide owl-carousel">
+     
+     
             <div class="single_product_img">
-              <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
+              <img height="500" width="300" src="{{('../public/upload/product/'.$product->product_image)}}" alt="#" class="img-fluid">
             </div>
-            <div class="single_product_img">
-              <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
-            </div>
-            <div class="single_product_img">
-              <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
-            </div>
-          </div>
-        </div>
+           
+          
+        
         <div class="col-lg-8">
           <div class="single_product_text text-center">
-            <h3>Foam filling cotton slow <br>
-                rebound pillows</h3>
+            <h3><br>
+                {{$product->product_name}}</h3>
             <p>
-                Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Credibly innovate granular internal or organic sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal networks.
+            {{$product->product_desc}}
             </p>
+            <form action="{{URL::to('/save-cart')}}" method="POST">
+            {{csrf_field()}}
             <div class="card_area">
                 <div class="product_count_area">
                     <p>Quantity</p>
                     <div class="product_count d-inline-block">
-                        <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
-                        <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
-                        <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
+                        
+                        <input class="product_count_item input-number" name="qt" type="number" value="1" min="0" max="10" />
+                        <input name="productid" type="hidden" value="{{$product->product_id}}"/>
+                       
                     </div>
-                    <p>$5</p>
+                    <p>{{$product->product_gia}} VNĐ</p>
                 </div>
-              <div class="add_to_cart">
-                  <a href="#" class="btn_3">add to cart</a>
-              </div>
+              <button class="add_to_cart btn_3">
+                 add to cart
+              </button>
             </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
+  @endforeach
   @endsection

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\productController;
+use App\Http\Controllers\cartController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +35,17 @@ Route::post('/admin-dashboard',[AdminController::class,'dashboard']);
 
 //sanpham
 Route::get('/chi-tiet-san-pham/{product_id}',[productController::class,'detail_product']);
+
+
+//cart
+Route::post('/save-cart',[cartController::class,'save_cart']);
+
+
+
+//login
+Route::get('/login',[UserController::class,'show_login']);
+Route::post('/user-dashboard',[UserController::class,'login']);
+Route::get('/logout',[UserController::class,'logout']);
+//dangky
+Route::get('/dangky',[UserController::class,'show_dangky']);
+Route::post('/dangky-dashboard',[UserController::class,'dangky']);
