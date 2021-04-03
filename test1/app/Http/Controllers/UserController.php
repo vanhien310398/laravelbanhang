@@ -47,7 +47,25 @@ class UserController extends Controller
     
     }
     public function dangky(Request $request){
+        $this->validate($request, 
+        [
+            'email'=>'required|email|unique:users,email',
+            'password'=>'required|min:6|max:20|alpha_num',
+            'name'=>'required|',
+            
+        ],
+        [
+            'email.required'=>'Vui lòng nhập Email',
+            'email.email'=>'Email không đúng định dạng! (ten_email@gmail.com)',
+            'email.unique'=>'Email này đã được đăng ký!Vui lòng nhập Email khác !',
+            'password.required'=>'Vui lòng nhập mật khẩu <3',
+            're_password.same'=>'Mật khẩu không giống nhau :(',
+            'password.min'=>'Mật khẩu ít nhất có 6 ký tự ',
+            'password.max'=>'Mật khẩu quá 20 ký tự',
+            'password.alpha_num'=>'du lieu phai la chuoi va so'
+           
         
+        ]);
 
         $user = new User();
         $user->name = $request->name;
